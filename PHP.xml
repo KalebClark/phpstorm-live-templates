@@ -1,0 +1,99 @@
+<templateSet group="PHP">
+  <template name="arra" value="$$$NAME$ = Array(&#10;    $END$&#10;);&#10;" description="Create new array" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="dldoc_get" value="/**&#10; * @desc=Fetch $NAME$ by ID&#10; *&#10; * @type=GET&#10; * @route=/$ROUTE$/$ID$&#10; *&#10; * @param=int=$id $ID$ from $TABLE$ table&#10; * @param=bool=$rm return method&#10; *&#10; **/" description="Dandelion GET DocBlock" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+    </context>
+  </template>
+  <template name="dldoc_post" value="/**&#10; * @desc=Create $NAME$&#10; *&#10; * @type=POST&#10; * @route=/$ROUTE$&#10; *&#10; * @param=int=$id $ID$ from $TABLE$ table&#10; * @param=bool=$rm return method&#10; *&#10; * @vars=$VARS$&#10; * @encoding=form-data&#10; *&#10; **/" description="Dandelion POST DocBlock" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="dldoc_delete" value="/**&#10; * @desc=Delete $NAME$&#10; *&#10; * @type=DELETE&#10; * @route=/$ROUTE$/$ID$&#10; *&#10; * @param=int=$id $ID$ from $TABLE$ table&#10; * @param=bool=$rm return method&#10; *&#10; **/" description="Dandelion DELETE DocBlock" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="dldoc_put" value="/**&#10; * @desc=Update $NAME$&#10; *&#10; * @type=PUT&#10; * @route=/$ROUTE$/:$ID$&#10; *&#10; * @param=int=$id :$ID$ from $TABLE$ table&#10; * @param=bool=$rm return method&#10; *&#10; * @vars=$VARS$&#10; * @encoding=x-www-form-urlencoded&#10; *&#10; **/" description="Dandelion PUT DocBlock" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ROUTE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TABLE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="method" value="public function $NAME$($VARS$) {&#10;    $CODE$&#10;}" description="Create method" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VARS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="comment" value="/* $comment1%&#10; * ======================================================= */" description="Create Comment Block" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="SWGController" value="use Swagger\Annotations as SWG;&#10;&#10;/**&#10; * @SWG\Tag(&#10; *      name=&quot;$tagname$&quot;,&#10; *      description=&quot;$tagdesc$&quot;&#10; * )&#10; */&#10;/**&#10; * @SWG\Swagger(&#10; *      schemes={&quot;http&quot;},&#10; *      host=&quot;$host$&quot;,&#10; *      basePath=&quot;$basepath$&quot;,&#10; *      @SWG\Info(&#10; *          version=&quot;$version$&quot;,&#10; *          title=&quot;$title$&quot;,&#10; *          description=&quot;$desc$&quot;,&#10; *          @SWG\Contact(&#10; *              email=&quot;info@rocketdept.com&quot;&#10; *          )&#10; *      )&#10; * )&#10; */" description="SWG Controller Setup" toReformat="false" toShortenFQNames="true">
+    <variable name="tagname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="tagdesc" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="host" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="basepath" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="version" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="desc" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="SWGRouteGET" value="/**&#10; * @SWG\Api(&#10; * &#9;path=&quot;/$path$&quot;,&#10; *      @SWG\Operation(&#10; *      &#9;method=&quot;$method$&quot;,&#10; *      &#9;summary=&quot;$summary$&quot;&#10; *   &#9;)&#10; * )&#10; */" description="SWG Route GET" toReformat="false" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="summary" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="SWGRoutePOST" value="/**&#10; * @SWG\Api(&#10; * &#9;path=&quot;$path$&quot;,&#10; *      @SWG\Operation(&#10; *      &#9;method=&quot;$method$&quot;,&#10; *   &#9;&#9;summary=&quot;$summary$&quot;,&#10; *&#9;&#9;@SWG\Parameter(&#10; *&#9;&#9;&#9;$paramname$=&quot;$paramdesc$&quot;,&#10; *&#9;&#9;&#9;description=&quot;$description$&quot;,&#10; *&#9;&#9;&#9;paramType=&quot;path&quot;,&#10; *      &#9;&#9;required=true,&#10; *      &#9;&#9;allowMultiple=false,&#10; *      &#9;&#9;type=&quot;integer&quot;&#10; *      &#9;),&#10; *&#9;&#9;@SWG\ResponseMessage(code=404, message=&quot;$message$&quot;)&#10; * &#9;)&#10; * )&#10; */" description="SWG Route POST" toReformat="false" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="summary" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="paramname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="paramdesc" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="SWGParam" value="     @SWG\Parameter(&#10;*          name=&quot;$name$&quot;,&#10;*          type=&quot;$type$&quot;,&#10;*          in=&quot;formData&quot;,&#10;*          description=&quot;$description$&quot;,&#10;*          required=$required$,&#10;*      )," description="Swagger Parameter" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="required" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+</templateSet>

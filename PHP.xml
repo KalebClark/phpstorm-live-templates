@@ -75,14 +75,16 @@
       <option name="PHP" value="true" />
     </context>
   </template>
-  <template name="SWGRoutePOST" value="/**&#10; * @SWG\Api(&#10; * &#9;path=&quot;$path$&quot;,&#10; *      @SWG\Operation(&#10; *      &#9;method=&quot;$method$&quot;,&#10; *   &#9;&#9;summary=&quot;$summary$&quot;,&#10; *&#9;&#9;@SWG\Parameter(&#10; *&#9;&#9;&#9;$paramname$=&quot;$paramdesc$&quot;,&#10; *&#9;&#9;&#9;description=&quot;$description$&quot;,&#10; *&#9;&#9;&#9;paramType=&quot;path&quot;,&#10; *      &#9;&#9;required=true,&#10; *      &#9;&#9;allowMultiple=false,&#10; *      &#9;&#9;type=&quot;integer&quot;&#10; *      &#9;),&#10; *&#9;&#9;@SWG\ResponseMessage(code=404, message=&quot;$message$&quot;)&#10; * &#9;)&#10; * )&#10; */" description="SWG Route POST" toReformat="false" toShortenFQNames="true">
+  <template name="SWGRoutePOST" value="/**&#10; * @SWG\Post(&#10; *      tags={&quot;$tag$&quot;},&#10; *      path=&quot;$path$&quot;,&#10; *      operationId=&quot;$operationid$&quot;,&#10; *      summary=&quot;$summary$&quot;,&#10; *      description=&quot;$desc$&quot;,&#10; *      produces={&quot;application/json&quot;},&#10; *      @SWG\Parameter(&#10; *          name=&quot;$paramname$&quot;,&#10; *          type=&quot;$paramtype$&quot;,&#10; *          in=&quot;formData&quot;,&#10; *          description=&quot;$paramdesc$&quot;,&#10; *          required=$paramreq$,&#10; *      ),&#10; *      @SWG\Response(&#10; *          response=200,&#10; *          description=&quot;Success&quot;&#10; *      )&#10; * )&#10; */" description="SWG Route POST" toReformat="false" toShortenFQNames="true">
+    <variable name="tag" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="operationid" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="summary" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="desc" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="paramname" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="paramtype" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="paramdesc" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="paramreq" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="PHP" value="true" />
     </context>
@@ -91,7 +93,7 @@
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="description" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="required" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="required" expression="" defaultValue="true" alwaysStopAt="true" />
     <context>
       <option name="PHP Comment" value="true" />
     </context>

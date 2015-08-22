@@ -6,4 +6,16 @@
       <option name="PHP" value="true" />
     </context>
   </template>
+  <template name="validate" value="/* Validation&#10; * http://laravel.com/docs/5.0/validation#available-validation-rules&#10; * ================================================================= */&#10;$validator = Validator::make($request-&gt;all(), Array(&#10;    '$field$'   =&gt; 'required',&#10;));&#10;&#10;if($validator-&gt;fails()) {&#10;    return $validator-&gt;errors();&#10;}&#10;// End Validation&#10;" description="Laravel Validation" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="saveModel" value="/* Save model&#10; * ========== */&#10;try {&#10;    $model$-&gt;save();&#10;    return $model$;&#10;} catch (\PDOException $e) {&#10;    return Response::json([&#10;        'message'   =&gt; $e-&gt;getMessage()&#10;    ]);&#10;}&#10;// End Save Model" description="Save Model" toReformat="false" toShortenFQNames="true">
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
